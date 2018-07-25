@@ -7,7 +7,7 @@
       <svg class="icon" aria-hidden="true" slot="icon-active">
         <use xlink:href="#icon-clock_fill"></use>
       </svg>
-      <span slot="label">学习</span>
+      <span slot="label">往期</span>
     </tabbar-item>
     <tabbar-item :selected="isQuestion" show-dot link="/Question">
       <svg class="icon" aria-hidden="true" slot="icon">
@@ -16,16 +16,7 @@
       <svg class="icon" aria-hidden="true" slot="icon-active">
         <use xlink:href="#icon-feedback_fill"></use>
       </svg>
-      <span slot="label">问答</span>
-    </tabbar-item>
-    <tabbar-item :selected="isShop" link="/Shop">
-      <svg class="icon" aria-hidden="true" slot="icon">
-        <use xlink:href="#icon-service"></use>
-      </svg>
-      <svg class="icon" aria-hidden="true" slot="icon-active">
-        <use xlink:href="#icon-service_fill"></use>
-      </svg>
-      <span slot="label">活动</span>
+      <span slot="label">直播</span>
     </tabbar-item>
     <tabbar-item :selected="isUser" badge="2" link="/User">
       <svg class="icon" aria-hidden="true" slot="icon">
