@@ -11,6 +11,7 @@
             @pulldownRefash="scrollToTop"
             :beforeScroll="true">
       <div class="content">
+        <div style="height: 1px"></div>
         <chat-img></chat-img>
         <ul class="content">
           <li class="item" v-for="item in data">{{item}}</li>
