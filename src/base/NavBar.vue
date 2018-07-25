@@ -9,7 +9,7 @@
       </svg>
       <span slot="label">往期</span>
     </tabbar-item>
-    <tabbar-item :selected="isQuestion" show-dot link="/Live">
+    <tabbar-item :selected="isLive" show-dot link="/Live">
       <svg class="icon" aria-hidden="true" slot="icon">
         <use xlink:href="#icon-live"></use>
       </svg>
@@ -42,11 +42,8 @@
       isHome () {
         return this.$route.name === 'Home'
       },
-      isQuestion () {
-        return this.$route.name === 'Question'
-      },
-      isShop () {
-        return this.$route.name === 'Shop'
+      isLive () {
+        return this.$route.name === 'Live'
       },
       isUser () {
         return this.$route.name === 'User'

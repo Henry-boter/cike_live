@@ -1,6 +1,6 @@
 <template>
   <transition name="slide">
-    <view-box class="detail-question">
+    <view-box class="discuss">
       <div v-for="item in 100">{{item}}</div>
     </view-box>
   </transition>
@@ -9,7 +9,7 @@
 <script>
   import { ViewBox } from 'vux'
   export default {
-    name: 'DetailQuestion',
+    name: 'Discuss',
     components: {
       ViewBox
     }
@@ -23,7 +23,7 @@
 .slide-enter, .slide-leave-to{
   transform: translate3d(100%, 0, 0)
 }
-.detail-question{
+.discuss{
   position: fixed;
   z-index: 100;
   top: 0;
