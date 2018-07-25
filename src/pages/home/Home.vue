@@ -17,7 +17,7 @@
 </script>
 
 <style lang="less" scoped>
-  @import "../common/less/variable";
+  @import "../../common/less/variable";
 .title{
   color: @color-sub-theme;
 }

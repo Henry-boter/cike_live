@@ -2,19 +2,19 @@
   <tabbar>
     <tabbar-item :selected="isHome" link="/">
       <svg class="icon" aria-hidden="true" slot="icon">
-        <use xlink:href="#icon-clock"></use>
+        <use xlink:href="#icon-video"></use>
       </svg>
       <svg class="icon" aria-hidden="true" slot="icon-active">
-        <use xlink:href="#icon-clock_fill"></use>
+        <use xlink:href="#icon-video_fill"></use>
       </svg>
       <span slot="label">往期</span>
     </tabbar-item>
-    <tabbar-item :selected="isQuestion" show-dot link="/Question">
+    <tabbar-item :selected="isQuestion" show-dot link="/Live">
       <svg class="icon" aria-hidden="true" slot="icon">
-        <use xlink:href="#icon-feedback"></use>
+        <use xlink:href="#icon-live"></use>
       </svg>
       <svg class="icon" aria-hidden="true" slot="icon-active">
-        <use xlink:href="#icon-feedback_fill"></use>
+        <use xlink:href="#icon-live_fill"></use>
       </svg>
       <span slot="label">直播</span>
     </tabbar-item>

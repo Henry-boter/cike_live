@@ -5,19 +5,16 @@ Vue.use(Router)
 Vue.use(Meta)
 export default new Router({
   routes: [
-    {path: '/HelloWorld', name: 'HelloWorld', component: resolve => require(['../components/HelloWorld'], resolve)},
-    {path: '/HelloFromVux', name: 'HelloFromVux', component: resolve => require(['../components/HelloFromVux'], resolve)},
-    {path: '/', name: 'Home', component: resolve => require(['../pages/Home'], resolve)},
-    {path: '/Question',
-      name: 'Question',
-      component: resolve => require(['../pages/Question'], resolve),
+    {path: '/', name: 'Home', component: resolve => require(['../pages/home/Home'], resolve)},
+    {path: '/Live',
+      name: 'Live',
+      component: resolve => require(['../pages/live/Live'], resolve),
       children: [
         {
           path: ':id',
-          component: resolve => require(['../pages/DetailQuestion'], resolve)
+          component: resolve => require(['../pages/live/Discuss'], resolve)
         }
       ]},
-    {path: '/Shop', name: 'Shop', component: resolve => require(['../pages/Shop'], resolve)},
-    {path: '/User', name: 'User', component: resolve => require(['../pages/User'], resolve)}
+    {path: '/User', name: 'User', component: resolve => require(['../pages/User/User'], resolve)}
   ]
 })
