@@ -1,6 +1,6 @@
 <template>
   <tabbar>
-    <tabbar-item :selected="isHome" link="/">
+    <tabbar-item :selected="isHome" link="/Home">
       <svg class="icon" aria-hidden="true" slot="icon">
         <use xlink:href="#icon-video"></use>
       </svg>
@@ -9,7 +9,7 @@
       </svg>
       <span slot="label">往期</span>
     </tabbar-item>
-    <tabbar-item :selected="isLive" show-dot link="/Live">
+    <tabbar-item :selected="isLive" show-dot link="/">
       <svg class="icon" aria-hidden="true" slot="icon">
         <use xlink:href="#icon-live"></use>
       </svg>

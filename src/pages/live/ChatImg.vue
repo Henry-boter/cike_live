@@ -3,7 +3,8 @@
     <svg class="icon" aria-hidden="true" slot="icon-active">
       <use xlink:href="#icon-ArtboardCopy-"></use>
     </svg>
-    <img class="content-img" src="../../common/img/pic_1.jpg"/></div>
+    <img class="content-img" src="../../common/img/pic_1.jpg"/>
+  </div>
 </template>
 
 <script>

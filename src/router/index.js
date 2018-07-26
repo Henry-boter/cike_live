@@ -5,8 +5,8 @@ Vue.use(Router)
 Vue.use(Meta)
 export default new Router({
   routes: [
-    {path: '/', name: 'Home', component: resolve => require(['../pages/home/Home'], resolve)},
-    {path: '/Live',
+    {path: '/Home', name: 'Home', component: resolve => require(['../pages/home/Home'], resolve)},
+    {path: '/',
       name: 'Live',
       component: resolve => require(['../pages/live/Live'], resolve),
       children: [
