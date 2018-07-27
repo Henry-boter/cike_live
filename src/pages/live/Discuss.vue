@@ -1,17 +1,19 @@
 <template>
   <transition name="slide">
-    <view-box class="discuss">
-      <chat-text></chat-text>
-      <chat-audio></chat-audio>
-      <chat-text></chat-text>
-      <chat-audio></chat-audio>
-      <chat-audio></chat-audio>
-      <chat-audio></chat-audio>
-      <chat-text></chat-text>
-      <chat-text></chat-text>
-      <chat-image></chat-image>
+    <div class="discuss">
+      <view-box>
+        <chat-text></chat-text>
+        <chat-audio></chat-audio>
+        <chat-text></chat-text>
+        <chat-audio></chat-audio>
+        <chat-audio></chat-audio>
+        <chat-audio></chat-audio>
+        <chat-text></chat-text>
+        <chat-text></chat-text>
+        <chat-image></chat-image>
+      </view-box>
       <chat-input></chat-input>
-    </view-box>
+    </div>
   </transition>
 </template>
 
@@ -50,7 +52,7 @@
 }
 .discuss{
   position: fixed;
-  z-index: 100;
+  z-index: 3;
   top: 0;
   left: 0;
   bottom: 0;

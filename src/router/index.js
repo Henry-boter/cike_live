@@ -6,6 +6,7 @@ Vue.use(Meta)
 export default new Router({
   routes: [
     {path: '/Home', name: 'Home', component: resolve => require(['../pages/home/Home'], resolve)},
+    {path: '/User', name: 'User', component: resolve => require(['../pages/User/User'], resolve)},
     {path: '/',
       name: 'Live',
       component: resolve => require(['../pages/live/Live'], resolve),
@@ -14,7 +15,6 @@ export default new Router({
           path: ':id',
           component: resolve => require(['../pages/live/Discuss'], resolve)
         }
-      ]},
-    {path: '/User', name: 'User', component: resolve => require(['../pages/User/User'], resolve)}
+      ]}
   ]
 })

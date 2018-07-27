@@ -19,6 +19,7 @@
     </video>
     <div class="cover" v-show="isCover">
       <img class="cover-image" src="../../common/img/video.jpg" @click="play"/>
+      <p>&nbsp;</p>
     </div>
   </div>
 </div>
@@ -60,6 +61,7 @@
       margin-top: -2px; margin-left: -1px; margin-right: -1px;
     }
     .cover{
+      width: 100%;
       position: absolute;
       top: 0;
       left: 0;

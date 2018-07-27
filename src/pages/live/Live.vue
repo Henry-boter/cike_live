@@ -1,6 +1,8 @@
 <template>
   <div class="Live">
+    <live-media></live-media>
     <Scroll class="wrapper"
+            :style="autoHeight"
             :data="data"
             :listenScroll="true"
             @scroll="scroll"
@@ -23,6 +25,7 @@
         <!--<ul class="content">-->
           <!--<li class="item" v-for="item in data">{{item}}</li>-->
         <!--</ul>-->
+        <div style="height: 20px"></div>
       </div>
     </Scroll>
     <div class="right-sidebar" @click="toDiscuss">
@@ -33,7 +36,6 @@
       </div>
       <div class="right">进入互动</div>
     </div>
-    <chat-input></chat-input>
     <router-view></router-view>
   </div>
 </template>
@@ -45,6 +47,7 @@
   import ChatText from './ChatText'
   import ChatVideo from './ChatVideo'
   import ChatInput from './ChatInput'
+  import LiveMedia from './LiveMedia'
   export default {
     name: 'Live',
     metaInfo () {
@@ -59,7 +62,8 @@
       ChatAudio,
       ChatText,
       ChatVideo,
-      ChatInput
+      ChatInput,
+      LiveMedia
     },
     data () {
       return {
@@ -69,6 +73,11 @@
     },
     created () {
       this.loadData()
+    },
+    computed: {
+      autoHeight () {
+        return `height: ${window.innerHeight - window.innerWidth * 9 / 16 - 53}px`
+      }
     },
     methods: {
       loadData () {

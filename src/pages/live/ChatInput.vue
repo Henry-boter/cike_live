@@ -56,6 +56,7 @@
 
 <style scoped lang="less">
   .chat-input{
+    -webkit-transform: translateZ(0);
     position: fixed;
     bottom: 0;
     left: 0;
@@ -69,8 +70,8 @@
       .left{
         margin-right: 3px;
         .icon{
-          width: 30px;
-          height: 30px;
+          width: 26px;
+          height: 26px;
           color: #9c9db7;
           border: 1px solid #9c9db7;
           border-radius: 50%;
@@ -89,16 +90,16 @@
         font-size: 12px;
       }
       .right{
-        padding: 0 5px;
+        padding: 0 10px 0px 5px;
         .icon{
-          width: 30px;
-          height: 30px;
+          width: 26px;
+          height: 26px;
         }
       }
       .add{
         .icon{
-          width: 30px;
-          height: 30px;
+          width: 26px;
+          height: 26px;
           color: #9c9db7;
           border: 1px solid #9c9db7;
           border-radius: 50%;
