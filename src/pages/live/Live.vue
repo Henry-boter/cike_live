@@ -1,6 +1,6 @@
 <template>
   <div class="Live">
-    <live-media></live-media>
+    <live-media v-show="isMedia"></live-media>
     <Scroll class="wrapper"
             :style="autoHeight"
             :data="data"
@@ -17,7 +17,7 @@
         <chat-img></chat-img>
         <chat-audio></chat-audio>
         <chat-text></chat-text>
-        <chat-video></chat-video>
+        <!--<chat-video></chat-video>-->
         <chat-audio></chat-audio>
         <chat-audio></chat-audio>
         <chat-text></chat-text>
@@ -48,6 +48,7 @@
   import ChatVideo from './ChatVideo'
   import ChatInput from './ChatInput'
   import LiveMedia from './LiveMedia'
+  import AliPlayer from './AliPlayer'
   export default {
     name: 'Live',
     metaInfo () {
@@ -63,6 +64,7 @@
       ChatText,
       ChatVideo,
       ChatInput,
+      AliPlayer,
       LiveMedia
     },
     data () {
@@ -71,8 +73,17 @@
         pulldown: true
       }
     },
+    watch: {
+      '$route': {        // 使用watch来监控是否是同一个路由
+        handler: 'resetData',
+        immediate: true
+      }
+    },
     created () {
       this.loadData()
+    },
+    mounted () {
+      console.log(this.$route.params.id)
     },
     computed: {
       autoHeight () {
@@ -80,6 +91,14 @@
       }
     },
     methods: {
+      resetData () {
+        console.log(this.$route.params.id)
+        if (this.$route.params.id) {
+          this.isMedia = false
+        } else {
+          this.isMedia = true
+        }
+      },
       loadData () {
         setTimeout(() => {
           this.data = [1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 22, 2, 2, 33, 3, 3, 3, 3, 3, 3, 2, 23, 3, 2, 35, 6, 45, 94, 6]

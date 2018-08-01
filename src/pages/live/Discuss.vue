@@ -39,6 +39,17 @@
       ChatText,
       ChatVideo,
       ChatInput
+    },
+    mounted () {
+      this.videoHiddle()
+    },
+    methods: {
+      videoHiddle () {
+        console.log(this.$route.params.id)
+        // if (this.$route.params.id) {
+        //   this.$emit('videoHiddle')
+        // }
+      }
     }
   }
 </script>
