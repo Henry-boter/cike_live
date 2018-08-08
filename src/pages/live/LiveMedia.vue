@@ -17,6 +17,7 @@
     },
     methods: {
       initPage () {
+        /* eslint-disable */
         var player = new TcPlayer('id_test_video', {
           // "m3u8": "http://28821.liveplay.myqcloud.com/live/28821_8cc35ade93d411e892905cb9018cf0d4_550.m3u8", //请替换成实际可用的播放地址
           'mp4': 'http://1256993030.vod2.myqcloud.com/d520582dvodtransgzp1256993030/7732bd367447398157015849771/v.f30.mp4',

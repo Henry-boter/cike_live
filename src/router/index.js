@@ -14,6 +14,10 @@ export default new Router({
         {
           path: ':id',
           component: resolve => require(['../pages/live/Discuss'], resolve)
+        },
+        {
+          path: ':id/:team',
+          component: resolve => require(['../pages/live/Team.vue'], resolve)
         }
       ]}
   ]
