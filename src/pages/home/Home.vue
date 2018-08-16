@@ -1,19 +1,19 @@
 <template>
   <div>
-     <!-- <div id="video-container" style="margin: 0px auto;"></div> -->
-     <video id="test_video" 
+     <div id="video-container" style="margin: 0px auto;postion: fixed"></div>
+     <!-- <video id="test_video"
       src="http://video.cike.hk/c084621fba374468b9019e1c8b647330/5139b1f821324e12ba78008d2d0b0eb4-a5b7d8911cc7d347a9c9dd7e9b1d521b.mp4"
-      webkit-playsinline="false" 
+      webkit-playsinline="false"
       x-webkit-airplay="false"
       playsinline="false"
       x5-video-player-fullscreen="false"
       autoplay
       muted
-      controls 
-      width="100%">
+      controls
+      width="100%"> -->
 </video>
   </div>
- 
+
 </template>
 
 <script>
@@ -88,15 +88,16 @@
               m3u8: m3u8 ,
               mp4: mp4 || '//1256993030.vod2.myqcloud.com/d520582dvodtransgzp1256993030/7732bd367447398157015849771/v.f30.mp4',
               autoplay: autoplay,
-              live: live,
-              width: width || '480',
-              height: height || '320',
+              live: false,
+              width: width || '40',
+              height: height || '30',
               volume: volume || 0.5,
               flash: flash,
               flashUrl: flashUrl,
-              x5_player: x5_player,
+              x5_player: true,
               h5_flv: h5_flv,
               x5_type: 'h5',
+              systemFullscreen: false,
               wording: {
                 2032: '请求视频失败，请检查网络',
                 2048: '请求m3u8文件失败，可能是网络错误或者跨域问题'

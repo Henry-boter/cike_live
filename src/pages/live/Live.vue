@@ -1,6 +1,8 @@
 <template>
   <div class="Live">
-    <live-media v-show="isMedia"></live-media>
+    <audio style="position: fixed;z-index: 100;top: 0;left: 0" autoplay src="http://1256993030.vod2.myqcloud.com/d520582dvodtransgzp1256993030/7732bd367447398157015849771/v.f30.mp4" v-if="!isMedia" controls></audio>
+     <live-media v-if="isMedia"></live-media>
+    <!--<media></media>-->
     <Scroll class="wrapper"
             :style="autoHeight"
             :data="data"
@@ -41,6 +43,7 @@
 </template>
 
 <script>
+  import serverAddress from '../'
   import Scroll from '../../base/Scroll'
   import ChatImg from './ChatImg'
   import ChatAudio from './ChatAudio'
@@ -49,6 +52,7 @@
   import ChatInput from './ChatInput'
   import LiveMedia from './LiveMedia'
   import AliPlayer from './AliPlayer'
+  import Media from './Media.vue'
   export default {
     name: 'Live',
     metaInfo () {
@@ -65,7 +69,8 @@
       ChatVideo,
       ChatInput,
       AliPlayer,
-      LiveMedia
+      LiveMedia,
+      Media
     },
     data () {
       return {
@@ -83,6 +88,7 @@
       this.loadData()
     },
     mounted () {
+      this.url = _global.host + '/fileUpload'
       console.log(this.$route.params.id)
     },
     computed: {
