@@ -1,27 +1,230 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <title>磁课英语</title>
-    <!--<script src="//qzonestyle.gtimg.cn/open/qcloud/video/live/h5/live_connect.js" charset="utf-8"></script>-->
-    <script src="http://imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.2.js" charset="utf-8"></script>
-    <script src=" https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <!--<style>-->
-      <!--body {-->
-        <!--margin: 0;-->
-        <!--padding: 0;-->
-      <!--}-->
-      <!--.vcp-error-tips {-->
-        <!--color: #fff;-->
-      <!--}-->
-      <!--a{-->
-        <!--color: #fff;-->
-      <!--}-->
-    <!--</style>-->
-  </head>
-  <body>
-    <div id="app-box"></div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="Keywords" content="" />
+  <meta name="Description" content="" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=750,minimum-scale=0.3,maximum-scale=2,user-scalable=no" />
+  <!--<link rel="stylesheet" type="text/css" href="css/style.css" />-->
+  <style>
+    /*@charset "utf-8";*/
+    * {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    p,
+    div,
+    ol,
+    ul,
+    input,
+    button {
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      -webkit-text-size-adjust: 100%;
+      color: #333333;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: "微软雅黑", Helvetica, "Droid Sans", Arial, sans-serif;
+    }
+
+    ol,
+    ul {
+      list-style: none
+    }
+
+    a {
+      color: #333333;
+      text-decoration: none;
+    }
+
+    input,
+    button,
+    textarea {
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      -webkit-appearance: none;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    button {
+      outline: none
+    }
+
+    .view {
+      position: absolute;
+      width: 750px;
+      height: 100%;
+      overflow: hidden;
+      left: 50%;
+      margin-left: -375px;
+    }
+
+    .page {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .page_box {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      left: 0;
+      top: 0;
+    }
+
+    .scrollview {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .video_box{
+      position: relative;
+      width: 750px;
+      height: 421px;
+      overflow: hidden;
+    }
+    .lang_pic{
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .lang_pic img{
+      display: block;
+      width: 100%;
+    }
+    .video_post{
+      position: absolute;
+      width: 750px;
+      height: auto;
+      top: 0;
+      left: 0;
+    }
+
+    .fgx_box{
+      width: 100%;
+      height: 3px;
+      background-color: #a8a4a1;
+    }
+  </style>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <!--<script type="text/javascript" src="js/script.js"></script>-->
+  <script>
+    var d_width = 750,
+      d_height = 1206,
+      w_width=0,
+      w_height=0;
+
+    function page_init() {
+      w_width = $(window).width() > d_width ? d_width : $(window).width();
+      w_height = $(window).height() / w_width * d_width;
+      $(".page_box").css({
+        "width": d_width + "px",
+        "height": d_height + "px",
+        "top": (w_height - d_height) / 2 + "px"
+      });
+    }
+
+    $(document).ready(function() {
+      page_init();
+
+    });
+  </script>
+  <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script>
+    // 微信配置
+    wx.config({
+      debug: false,
+      appId: 'wxe497f4ba6ef369bc',
+      timestamp: '1535101681',
+      nonceStr: 'XrAK2t2JBOdEAJcU',
+      signature: '3f406ba729a3d3db1eab651b65502e22fa0310ef',
+      jsApiList: [
+        // 所有要调用的 API 都要加到这个列表中
+        'checkJsApi',
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage'
+      ]
+    });
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+      // 发送给好友
+      WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+        WeixinJSBridge.invoke('sendAppMessage', {
+          "img_url": 'http://www.ihotting.cn/ylsp_vd/img/share_1.png',
+          "link": 'http://www.ihotting.cn/ylsp_vd',
+          "desc": "这里有料 就等你来",
+          "title": '民生个金有料小组'
+        });
+      });
+      // 分享到朋友圈
+      WeixinJSBridge.on('menu:share:timeline', function(argv) {
+        WeixinJSBridge.invoke('shareTimeline', {
+          "img_url": 'http://www.ihotting.cn/ylsp_vd/img/share_1.png',
+          "link": 'http://www.ihotting.cn/ylsp_vd',
+          "desc": "这里有料 就等你来",
+          "title": '民生个金有料小组'
+        });
+      });
+    }, false);
+  </script>
+  <title>民生个金有料小组</title>
+</head>
+
+<body>
+<div class="view">
+  <div class="video_box">
+    <img class="video_post" src="http://www.ihotting.cn/ylsp_vd/img/video_post.gif" />
+    <video src="http://www.ihotting.cn/ylsp_vd/video/video.mp4" width="1" height="1" id="video" autoplay="autoplay" preload="auto" x-webkit-airplay="true" airplay="allow" webkit-playsinline="true" poster="http://www.ihotting.cn/ylsp_vd/img/video_post.gif" playsinline="" x5-playsinline=""></video>
+  </div>
+  <div class="fgx_box"></div>
+  <div class="lang_pic">
+    <div class="scrollview">
+      <img src="http://www.ihotting.cn/ylsp_vd/img/lang.jpg" />
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  $(document).ready(function() {
+    var wind_h = $(window).height();
+    var video_box_h = $(".video_box").height();
+    console.log(wind_h, video_box_h)
+    $(".lang_pic").css({
+      "height": wind_h - video_box_h - 3 + "px"
+    });
+    $(".video_post").click(function() {
+      $("#video").css({
+        "width": 100 +"%" ,
+        "height": 100 +"%"
+      });
+      $("#video")[0].play();
+      $(".video_post").hide();
+    });
+  });
+</script>
+
 </html>

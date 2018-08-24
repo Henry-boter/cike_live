@@ -43,7 +43,6 @@
 </template>
 
 <script>
-  import serverAddress from '../'
   import Scroll from '../../base/Scroll'
   import ChatImg from './ChatImg'
   import ChatAudio from './ChatAudio'
@@ -88,7 +87,6 @@
       this.loadData()
     },
     mounted () {
-      this.url = _global.host + '/fileUpload'
       console.log(this.$route.params.id)
     },
     computed: {
